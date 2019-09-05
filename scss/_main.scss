@@ -106,6 +106,10 @@ select {
   font-family: $opensans-light;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 .section {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -148,16 +152,55 @@ select {
 .form {
   width: 550px;
   height: 180px;
-  background: rgba(0, 0, 0, .4);
-
+  margin-top: 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
   border-radius: 3px;
+  background: rgba(0, 0, 0, .4);
 
   &__element {
     width: 240px;
     height: 50px;
-    border-radius: 5px
+    border-radius: 5px;
+
+    &[type=text] {
+      padding-left: 40px;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 10px
   }
 }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none
+  }
+}
+
+#category {
+  position: relative;
+
+  &:after {
+    content: '˅';
+    color: #000;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+}
+
+// Секция 2
 
 .category {
   width: 860px;
@@ -326,5 +369,166 @@ select {
 
   &__price {
     font-weight: bold;
+  }
+}
+
+// Секция 4
+
+.offers {
+  @extend %flexCenterXY;
+
+  justify-content: flex-start;
+  height: 600px;
+  background: url(../imgs/section-4-bg.jpg);
+
+  &__col {
+    padding: 0
+  }
+
+  &__h1 {
+    text-align: left;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 5px
+    }
+  }
+
+  &__thumb {
+    @extend %flexCenterXY;
+
+    width: 85px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  &__img {
+    width: 70px;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    margin-left: 20px
+  }
+
+  &__cta {
+    height: 120px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-title {
+      font-size: $font-25;
+      font-weight: bold
+    }
+
+    &-subtitle {
+      font-size: $font-18
+    }
+
+    &-btn {
+      width: initial;
+      max-width: 320px;
+      height: 40px;
+      padding-right: 25px;
+      padding-left: 25px;
+      color: #000;
+      font-size: $font-14
+    }
+  }
+}
+
+// Секция 5
+
+.testimonials {
+
+  // &__col {
+  //   position: relative;
+  // }
+  &__content {
+    position: relative;
+    padding: 30px 55px;
+    border-radius: 10px;
+    border: 1px solid #a5a5a5;
+  }
+
+
+
+  &__thumb {
+    width: 125px;
+    height: 125px;
+    border-radius: 4px;
+
+    position: absolute;
+    top: 20px;
+    left: -100px
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: $font-18
+  }
+
+  &__text {
+    color: #7e7e7e;
+    font-size: $font-14;
+  }
+}
+
+.banner {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  background: $accent-yellow;
+
+  &__bg-el {
+    position: absolute;
+    bottom: 0;
+    left: 0
+  }
+
+  &__col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__h1 {
+    color: #000;
+    margin: 0
+  }
+
+  &__tel {
+    align-self: flex-start
+  }
+}
+
+// Секция 7
+
+.section-7 {
+  &__h1 {
+    font-size: $font-25;
+    color: #000;
+    text-align: left;
+  }
+}
+
+.footer {
+
+  &__text {
+    @extend %flexCenterXY;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    font-size: $font-14;
+    border-top: 1px solid #7a7a7a;
   }
 }
