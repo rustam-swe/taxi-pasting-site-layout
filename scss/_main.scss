@@ -1,0 +1,279 @@
+// Остовные стили
+// Mobile first
+
+.container {
+  max-width: 1200px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.flex {
+  @extend %flexCenterXY;
+  justify-content: space-between;
+}
+
+// Ссылки
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+
+  &_primary {
+    font-size: $font-14;
+    color: $accent-orange;
+  }
+
+  &_secondary {
+    color: $secondary-color;
+  }
+
+  &_promo {
+    color: $promotion-label-color;
+    text-transform: uppercase;
+  }
+
+  &_underline {
+    text-decoration: underline;
+  }
+}
+
+input,
+button,
+select {
+  border: transparent
+}
+
+.btn {
+  // @extend %flexCenterXY;
+  display: block;
+  width: 240px;
+  height: 50px;
+  color: #000;
+  font-family: $opensans-bold;
+  text-transform: uppercase;
+  background-color: $accent-yellow;
+  border-radius: 5px;
+
+  &__black-border {
+    width: initial;
+    color: #000;
+    border: 1px solid #000;
+    background-color: transparent;
+  }
+
+  &__white-border {
+    width: initial;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+  }
+}
+
+.capital {
+  text-transform: uppercase;
+}
+
+.underlined-heading {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.6em;
+    left: 0;
+    width: 50%;
+    border-bottom: 0.125em solid $accent-orange;
+  }
+
+  &_short::after {
+    width: 30%;
+    max-width: 5em;
+    border-bottom-width: 0.1em;
+  }
+}
+
+// Списки (меню)
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+// Шрифты
+.bold {
+  font-family: $opensans-bold;
+}
+
+.light {
+  font-family: $opensans-light;
+}
+
+.section {
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  &__title {
+    text-align: center;
+    font-size: $font-30;
+    color: $accent-orange;
+    text-transform: uppercase;
+    font-family: $opensans-bold;
+  }
+
+  &__desc {
+    text-align: center;
+    font-size: $font-16;
+  }
+}
+
+.contrast-colors * {
+  color: #fff
+}
+
+// Секция 1
+
+.sales {
+  height: 550px;
+  background: url(../imgs/section-1-bg.jpg);
+
+  &__box {
+    width: 780px;
+    text-align: justify;
+  }
+}
+
+.big-price {
+  color: $accent-yellow;
+  font-size: 48px;
+}
+
+.form {
+  width: 550px;
+  height: 180px;
+  background: rgba(0, 0, 0, .4);
+
+  border-radius: 3px;
+
+  &__element {
+    width: 240px;
+    height: 50px;
+    border-radius: 5px
+  }
+}
+
+.category {
+  width: 860px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between
+  }
+
+  &__item {
+    width: 270px;
+  }
+
+  &__container {
+    width: 270px;
+    height: 250px;
+    padding: 10px;
+    border: 1px solid #acacac;
+    border-radius: 10px
+  }
+
+  &__info {
+    display: grid;
+    grid-gap: 0 1em;
+    grid-template-areas:
+      "thumb name"
+      "thumb price";
+  }
+
+  &__thumb {
+    grid-area: thumb
+  }
+
+  &__name {
+    grid-area: name;
+    font-size: $font-14
+  }
+
+  &__price {
+    grid-area: price;
+    color: $accent-red;
+    font-size: $font-18
+  }
+
+  &__sample {
+    display: block;
+    margin: 10px auto 0
+  }
+
+  &__btn {
+    margin: 10px auto 0;
+
+  }
+}
+
+.cta {
+  width: 860px;
+  height: 145px;
+  padding: 25px;
+  color: #fff;
+  background: url(../imgs/cta-bg.jpg);
+
+  &__text {
+    font-size: $font-18;
+  }
+
+  &__btn {
+    height: 40px;
+    font-size: $font-14;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding-top: 10px
+  }
+
+  &__tel {
+    color: #fff;
+    margin-left: 25px
+  }
+}
+
+.licence {
+  height: 240px;
+  background: $accent-yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+
+  &__price {
+    font-size: $font-25;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    width: 265px;
+    padding-right: 25px;
+    padding-left: 25px
+  }
+}
+
+.features {
+  &__list {
+    justify-content: space-between
+  }
+
+  &__item {
+    min-width: 290px;
+    height: 125px;
+    flex-direction: column;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-family: $opensans-bold;
+    background: $accent-yellow;
+  }
+}

@@ -1,0 +1,27 @@
+.header-top {
+  height: 90px;
+}
+
+.logo,
+.tel {
+  font-size: $font-30;
+  text-transform: uppercase
+}
+
+.nav {
+  height: 50px;
+  background: url(../imgs/nav-bg.jpg) repeat-x;
+
+  &__menu {
+    display: flex;
+  }
+
+  &__item {
+    font-size: $font-14;
+    text-transform: uppercase;
+
+    &:not(:first-child):not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+}
