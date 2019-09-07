@@ -1,6 +1,14 @@
 // Остовные стили
 // Mobile first
 
+.header,
+.main,
+.footer {
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container {
   max-width: 1200px;
   padding-left: 0;
@@ -51,8 +59,9 @@ select {
   color: #000;
   font-family: $opensans-bold;
   text-transform: uppercase;
-  background-color: $accent-yellow;
   border-radius: 5px;
+  background-color: $accent-yellow;
+  cursor: pointer;
 
   &__black-border {
     width: initial;
@@ -66,6 +75,10 @@ select {
     color: #fff;
     border: 1px solid #fff;
     background-color: transparent;
+  }
+
+  &[type=submit] {
+    color: #000;
   }
 }
 
@@ -111,10 +124,11 @@ select {
 }
 
 .section {
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   &__title {
+    margin-top: 0;
     text-align: center;
     font-size: $font-30;
     color: $accent-orange;
@@ -136,7 +150,18 @@ select {
 
 .sales {
   height: 550px;
-  background: url(../imgs/section-1-bg.jpg);
+  background: url(../imgs/section-1-bg.jpg) no-repeat;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 83px;
+    background: url(../imgs/clip-corner.png) no-repeat;
+  }
 
   &__box {
     width: 780px;
@@ -145,8 +170,10 @@ select {
 }
 
 .big-price {
-  color: $accent-yellow;
   font-size: 48px;
+  color: $accent-yellow;
+  background: url(../imgs/price-yellow.png) no-repeat left center;
+  padding-left: 65px;
 }
 
 .form {
@@ -164,10 +191,25 @@ select {
   &__element {
     width: 240px;
     height: 50px;
+    color: #858585;
     border-radius: 5px;
 
     &[type=text] {
       padding-left: 40px;
+    }
+
+    &_select {
+      padding-left: 20px;
+      background: #fff url(../imgs/arrow.png) no-repeat 210px center;
+
+    }
+
+    &_user {
+      background: #fff url(../imgs/user.png) no-repeat 15px center;
+    }
+
+    &_tel {
+      background: #fff url(../imgs/tel-gray.png) no-repeat 15px center;
     }
   }
 
@@ -181,29 +223,24 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
 
   &::-ms-expand {
     display: none
   }
 }
 
-#category {
-  position: relative;
-
-  &:after {
-    content: '˅';
-    color: #000;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%)
-  }
-}
-
 // Секция 2
+
+.price {
+  padding-top: 20px;
+  padding-bottom: 0;
+  background: url(../imgs/price-bg.png) no-repeat;
+}
 
 .category {
   width: 860px;
+  margin-top: 50px;
 
   &__list {
     display: flex;
@@ -259,7 +296,8 @@ select {
 .cta {
   width: 860px;
   height: 145px;
-  padding: 25px;
+  margin-top: 35px;
+  padding: 20px 25px;
   color: #fff;
   background: url(../imgs/cta-bg.jpg);
 
@@ -277,21 +315,31 @@ select {
   &__footer {
     display: flex;
     align-items: center;
-    padding-top: 10px
+    padding-top: 5px
   }
 
   &__tel {
     color: #fff;
-    margin-left: 25px
+    margin-left: 25px;
+    padding-left: 25px;
+    background: url(../imgs/tel-white.png) no-repeat left center;
   }
 }
 
 .licence {
   height: 240px;
-  background: $accent-yellow;
+  margin-top: 65px;
   display: flex;
   flex-direction: column;
   align-items: space-between;
+  background: #eed710 url(../imgs/licence-bg.jpg) no-repeat; //$accent-yellow;
+  mask: url(../imgs/clip-bg.png) no-repeat;
+
+  &__h1 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: #000;
+  }
 
   &__price {
     font-size: $font-25;
@@ -300,6 +348,7 @@ select {
 
   &__btn {
     width: 265px;
+    height: 40px;
     padding-right: 25px;
     padding-left: 25px
   }
@@ -309,6 +358,11 @@ select {
 
 .features {
   background: #fff url(../imgs/section-3-bg.jpg) no-repeat;
+
+  &__cards {
+    margin-top: 30px;
+    margin-bottom: 35px;
+  }
 
   &__list {
     justify-content: space-between
@@ -328,8 +382,13 @@ select {
 }
 
 .gallery {
+  &__h1 {
+    margin-bottom: 10px;
+  }
+
   &__list {
     max-width: 1020px;
+    margin-top: 45px;
     margin-right: auto;
     margin-left: auto;
     display: grid;
@@ -369,6 +428,8 @@ select {
 
   &__price {
     font-weight: bold;
+    background: url(../imgs/price-gray.png) no-repeat left center;
+    padding-left: 30px;
   }
 }
 
@@ -387,6 +448,7 @@ select {
 
   &__h1 {
     text-align: left;
+    margin-bottom: 40px;
   }
 
   &__item {
@@ -447,10 +509,9 @@ select {
 // Секция 5
 
 .testimonials {
+  padding-top: 30px;
+  padding-bottom: 30px;
 
-  // &__col {
-  //   position: relative;
-  // }
   &__content {
     position: relative;
     padding: 30px 55px;
@@ -458,7 +519,13 @@ select {
     border: 1px solid #a5a5a5;
   }
 
+  &__list {
+    margin-top: 40px;
+  }
 
+  &__item:not(:last-child) {
+    margin-bottom: 25px
+  }
 
   &__thumb {
     width: 125px;
@@ -485,6 +552,8 @@ select {
 .banner {
   position: relative;
   height: 120px;
+  padding-top: 0;
+  padding-bottom: 0;
   display: flex;
   align-items: center;
   background: $accent-yellow;
@@ -507,13 +576,18 @@ select {
   }
 
   &__tel {
-    align-self: flex-start
+    align-self: flex-start;
+    background: url(../imgs/tel-black.png) no-repeat left center;
+    padding-left: 35px;
   }
 }
 
 // Секция 7
 
 .section-7 {
+  padding-top: 30px;
+  padding-bottom: 25px;
+
   &__h1 {
     font-size: $font-25;
     color: #000;
@@ -531,4 +605,24 @@ select {
     font-size: $font-14;
     border-top: 1px solid #7a7a7a;
   }
+}
+
+
+
+.sprite.price-yellow {
+  background-position: 0px 0px;
+  width: 46px;
+  height: 28px;
+}
+
+.sprite.price-gray {
+  background-position: -46px 0px;
+  width: 22px;
+  height: 14px;
+}
+
+.sprite.user {
+  background-position: -139px 0px;
+  width: 18px;
+  height: 18px;
 }

@@ -13,14 +13,14 @@
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <section class="header-top flex">
       <div class="container flex">
         <div class="logo">
           <span class="bold">Оклейка авто</span> под такси
         </div>
         <div class="phone">
-          <a href="tel:+79099817171" class="tel bold link">+7 (909) 981-71-71</a>
+          <a href="tel:+79099817171" class="tel tel_yellow sprite bold link">+7 (909) 981-71-71</a>
         </div>
       </div>
     </section>
@@ -36,7 +36,7 @@
       </div>
     </nav>
   </header>
-  <main>
+  <main class="main">
     <section class="sales section contrast-colors">
       <div class="container">
         <div class="sales__box">
@@ -47,19 +47,21 @@
               "Light Box" всего за 8 500 руб! Получите дополнительный приоритет установив фирменный Light Box Яндекс!
             </div>
           </header>
-          <div class="big-price bold capital">8500 руб.</div>
+          <div class="big-price sprite bold capital">8500 руб.</div>
           <div class="cta-text capital bold">Оставьте заявку на оклейку авто, и мы вам перезвоним</div>
           <form action="" class="form">
             <div class="form__group">
               <label for="name" class="form__label">Ваше имя</label>
-              <input id="name" class="form__element" type="text" name="name" placeholder="Иван">
+              <input id="name" class="form__element form__element_user sprite" type="text" name="name"
+                placeholder="Иван">
             </div>
             <div class="form__group">
               <label for="phone" class="form__label">Ваш телефон</label>
-              <input id="phone" class="form__element" type="text" name="phone" placeholder="+7 --- --- -- --">
+              <input id="phone" class="form__element form__element_tel sprite" type="text" name="phone"
+                placeholder="+7 --- --- -- --">
             </div>
-            <select class="form__element" name="category" id="category">
-              <option value="0">Выбрать оклейку</option>
+            <select class="form__element form__element_select" name="category" id="category">
+              <option value="">Выбрать оклейку</option>
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
@@ -122,27 +124,39 @@
                 Приезжать не нужно, подключим дистанционно. 3%</div>
               <footer class="cta__footer">
                 <button class="cta__btn btn btn__white-border">Оставить заявку на подключение</button>
-                <a href="tel:+79099817171" class="cta__tel tel bold link">+7 (909) 981-71-71</a>
+                <a href="tel:+79099817171" class="cta__tel tel tel_black sprite bold link">+7 (909) 981-71-71</a>
               </footer>
             </article>
           </div>
         </div>
-
-        <footer class="licence">
-          <h1 class="section__title">Лицензия такси. Быстро и надежно</h1>
-          <div class="licence__price bold">4 999 рублей</div>
-          <button class="licence__btn btn btn__black-border">Заказать лицензию</button>
-        </footer>
       </div>
+      <footer class="licence">
+        <div class="container">
+
+
+          <div class="row">
+            <div class="col-9 offset-3">
+              <h1 class="licence__h1 section__title text-left">Лицензия такси. Быстро и надежно</h1>
+              <div class="licence__price bold">4 999 рублей</div>
+              <button class="licence__btn btn btn__black-border">Заказать лицензию</button>
+            </div>
+          </div>
+      </footer>
+
     </section>
 
     <section class="features section">
       <div class="container">
-        <header class="section__header">
-          <h1 class="section__title">Наши преимущества</h1>
-          <div class="section__desc">Мы довольно давно работаем в сфере оклейки и брендирования автомобилей и выявили
-            большое количество фактов, которые помогли нам стать одними из лучших в своем деле</div>
-        </header>
+        <div class="row">
+          <div class="col-10 offset-1">
+            <header class="section__header">
+              <h1 class="section__title">Наши преимущества</h1>
+              <div class="section__desc">Мы довольно давно работаем в сфере оклейки и брендирования автомобилей и
+                выявили
+                большое количество фактов, которые помогли нам стать одними из лучших в своем деле</div>
+            </header>
+          </div>
+        </div>
         <div class="features__cards">
           <ul class="features__list list flex">
             <li class="features__item flex">
@@ -165,8 +179,8 @@
           </ul>
         </div>
         <section class="gallery">
-          <header class="section__eader">
-            <h1 class="section__title">фото наших работ</h1>
+          <header class="section__header">
+            <h1 class="gallery__h1 section__title">фото наших работ</h1>
             <div class="section__desc">Автомобили которые оклеивали наши специалисты</div>
           </header>
           <ul class="gallery__list list">
@@ -174,56 +188,56 @@
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price">8 500 руб</div>
+                <div class="gallery__price sprite">8 500 руб</div>
               </footer>
             </li>
 
@@ -296,6 +310,42 @@
                   </div>
                 </div>
               </li>
+              <li class="testimonials__item">
+                <div class="testimonials__content">
+                  <img src="./imgs/testimonials-thumb.jpg" alt="" class="testimonials__thumb">
+                  <div class="testimonials__name">Иванов Иван Иванович</div>
+                  <div class="testimonials__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+                    perspiciatis, voluptatum officia, deleniti nisi illum rem itaque aliquam quis, architecto doloribus
+                    voluptate optio ducimus sint quo amet id animi corporis. Dolorem deserunt itaque necessitatibus
+                    tenetur
+                    culpa, veniam delectus magnam totam quam nobis ipsam, quia et quasi velit iste corrupti libero,
+                    aliquam
+                    beatae temporibus sequi laudantium? Vel facere adipisci nulla voluptatibus, optio at officia magnam!
+                    Labore repudiandae repellendus corrupti voluptas consectetur, voluptates sint odit totam nulla nobis
+                    officiis iure quisquam inventore non facere eveniet. Vel nihil harum officia eum, labore culpa
+                    corrupti
+                    incidunt hic laudantium repellat excepturi soluta, rerum alias a.
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials__item">
+                <div class="testimonials__content">
+                  <img src="./imgs/testimonials-thumb.jpg" alt="" class="testimonials__thumb">
+                  <div class="testimonials__name">Иванов Иван Иванович</div>
+                  <div class="testimonials__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+                    perspiciatis, voluptatum officia, deleniti nisi illum rem itaque aliquam quis, architecto doloribus
+                    voluptate optio ducimus sint quo amet id animi corporis. Dolorem deserunt itaque necessitatibus
+                    tenetur
+                    culpa, veniam delectus magnam totam quam nobis ipsam, quia et quasi velit iste corrupti libero,
+                    aliquam
+                    beatae temporibus sequi laudantium? Vel facere adipisci nulla voluptatibus, optio at officia magnam!
+                    Labore repudiandae repellendus corrupti voluptas consectetur, voluptates sint odit totam nulla nobis
+                    officiis iure quisquam inventore non facere eveniet. Vel nihil harum officia eum, labore culpa
+                    corrupti
+                    incidunt hic laudantium repellat excepturi soluta, rerum alias a.
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -310,7 +360,7 @@
               <h1 class="banner__h1 section__title">оклейка авто <span class="light">под такси</span></h1>
               <div class="section__subtitle">Адрес: Химки, Ленинский проспект 23 А</div>
             </header>
-            <a href="tel:+79099817171" class="banner__tel tel bold link">+7 (909) 981-71-71</a>
+            <a href="tel:+79099817171" class="banner__tel tel tel_black sprite bold link">+7 (909) 981-71-71</a>
           </div>
         </div>
       </div>
