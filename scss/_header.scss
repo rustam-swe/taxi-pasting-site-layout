@@ -4,7 +4,7 @@
 
 .logo,
 .tel {
-  font-size: $font-30;
+  font-size: $font-16;
   text-transform: uppercase
 }
 
@@ -13,20 +13,118 @@
   padding-left: 35px;
 }
 
+
+
+
+// Навигационное меню в шапке
 .nav {
   height: 50px;
   background: url(../imgs/nav-bg.jpg) repeat-x;
+  align-items: flex-end;
+
+  &__container {
+    padding: 0;
+  }
 
   &__menu {
-    display: flex;
+    width: 100%;
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #fff;
+    z-index: 3;
+
+    &.show {
+      display: flex;
+    }
   }
 
   &__item {
-    font-size: $font-14;
-    text-transform: uppercase;
 
-    &:not(:first-child):not(:last-child) {
-      margin-right: 35px;
+    a {
+      height: initial;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000;
+      font-size: $font-14;
+      text-align: center;
+      text-transform: uppercase;
+      // height: 60px;
+
+
+      &:hover {
+        color: $accent-orange;
+      }
     }
   }
 }
+
+// Кнопка меню
+.menu-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: $accent-yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3;
+  cursor: pointer;
+
+  &__line {
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    // margin: 3px 0;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all .3s linear;
+
+    &:first-child {
+      transform: translateY(-6px)
+    }
+
+    &:last-child {
+      transform: translateY(6px)
+    }
+  }
+}
+
+.menu-btn.close {
+  .menu-btn__line {
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      visibility: hidden;
+      width: 0
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+
+}
+
+
+// .light-box {
+//   display: none;
+//   width: 100%;
+//   background-color: rgba(0, 0, 0, .5);
+//   height: 100%;
+//   position: fixed; // absolute;
+//   top: 60px;
+//   bottom: 0;
+//   z-index: 3;
+
+//   &.show {
+//     display: initial;
+//   }
+// }

@@ -15,17 +15,22 @@
 <body>
   <header class="header">
     <section class="header-top flex">
-      <div class="container flex">
+      <div class="container header__container flex flex_column">
         <div class="logo">
           <span class="bold">Оклейка авто</span> под такси
         </div>
         <div class="phone">
-          <a href="tel:+79099817171" class="tel tel_yellow sprite bold link">+7 (909) 981-71-71</a>
+          <a href="tel:+79099817171" class="tel tel_yellow bold link">+7 (909) 981-71-71</a>
         </div>
       </div>
     </section>
     <nav class="nav flex">
-      <div class="container">
+      <div class="menu-btn">
+        <div class="menu-btn__line"></div>
+        <div class="menu-btn__line"></div>
+        <div class="menu-btn__line"></div>
+      </div>
+      <div class="nav__container container">
         <ul class="nav__menu list">
           <li class="nav__item"><a href="#" class="link bold">Оклейка авто</a></li>
           <li class="nav__item"><a href="#" class="link bold">Цены</a></li>
@@ -39,34 +44,39 @@
   <main class="main">
     <section class="sales section contrast-colors">
       <div class="container">
-        <div class="sales__box">
-          <header class="section__header">
-            <h1 class="section__title text-left">Только до конца февраля!</h1>
-            <div class="section__desc text-left">Только до конца февраля! Брендирование автомобиля под Яндекс+
-              светодиодный
-              "Light Box" всего за 8 500 руб! Получите дополнительный приоритет установив фирменный Light Box Яндекс!
+        <div class="row">
+          <div class="col-12">
+            <div class="sales__box">
+              <header class="section__header">
+                <h1 class="section__title text-left">Только до конца февраля!</h1>
+                <div class="section__desc text-left">Только до конца февраля! Брендирование автомобиля под Яндекс+
+                  светодиодный
+                  "Light Box" всего за 8 500 руб! Получите дополнительный приоритет установив фирменный Light Box
+                  Яндекс!
+                </div>
+              </header>
+              <div class="big-price bold capital">8500 руб.</div>
+              <div class="cta-text capital bold">Оставьте заявку на оклейку авто, и мы вам перезвоним</div>
+              <form action="" class="form">
+                <div class="form__group">
+                  <label for="name" class="form__label">Ваше имя</label>
+                  <input id="name" class="form__element form__element_user" type="text" name="name" placeholder="Иван"
+                    required />
+                </div>
+                <div class="form__group">
+                  <label for="phone" class="form__label">Ваш телефон</label>
+                  <input id="phone" class="form__element form__element_tel" type="text" name="phone"
+                    placeholder="+7 --- --- -- --" required />
+                </div>
+                <select class="form__element form__element_select" name="category" id="category" required>
+                  <option value="">Выбрать оклейку</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+                <button type="submit" class="btn form__element capital">отправить заявку</button>
+              </form>
             </div>
-          </header>
-          <div class="big-price sprite bold capital">8500 руб.</div>
-          <div class="cta-text capital bold">Оставьте заявку на оклейку авто, и мы вам перезвоним</div>
-          <form action="" class="form">
-            <div class="form__group">
-              <label for="name" class="form__label">Ваше имя</label>
-              <input id="name" class="form__element form__element_user sprite" type="text" name="name"
-                placeholder="Иван">
-            </div>
-            <div class="form__group">
-              <label for="phone" class="form__label">Ваш телефон</label>
-              <input id="phone" class="form__element form__element_tel sprite" type="text" name="phone"
-                placeholder="+7 --- --- -- --">
-            </div>
-            <select class="form__element form__element_select" name="category" id="category">
-              <option value="">Выбрать оклейку</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
-            <button type="submit" class="btn form__element capital">отправить заявку</button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -74,7 +84,7 @@
     <section class="price section">
       <div class="container">
         <div class="row justify-content-end">
-          <div class="col-9">
+          <div class="col-12 col-md-9">
             <header class="section__header">
               <h1 class="section__title text-left">стоимость оклейки авто под такси</h1>
               <div class="section__desc text-left">Выберите подходящий для себя вариант оклейки автомобиля и закажите
@@ -124,18 +134,16 @@
                 Приезжать не нужно, подключим дистанционно. 3%</div>
               <footer class="cta__footer">
                 <button class="cta__btn btn btn__white-border">Оставить заявку на подключение</button>
-                <a href="tel:+79099817171" class="cta__tel tel tel_black sprite bold link">+7 (909) 981-71-71</a>
+                <a href="tel:+79099817171" class="cta__tel tel tel_black bold link">+7 (909) 981-71-71</a>
               </footer>
             </article>
           </div>
         </div>
       </div>
       <footer class="licence">
-        <div class="container">
-
-
+        <div class="container licence__container">
           <div class="row">
-            <div class="col-9 offset-3">
+            <div class="col-12 col-md-9 offset-md-3">
               <h1 class="licence__h1 section__title text-left">Лицензия такси. Быстро и надежно</h1>
               <div class="licence__price bold">4 999 рублей</div>
               <button class="licence__btn btn btn__black-border">Заказать лицензию</button>
@@ -188,56 +196,56 @@
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
             <li class="gallery__item">
               <img src="./imgs/gallery-img.png" alt="" class="gallery__img">
               <footer class="gallery__footer">
                 <div class="gallery__name">hyundai solaris</div>
-                <div class="gallery__price sprite">8 500 руб</div>
+                <div class="gallery__price">8 500 руб</div>
               </footer>
             </li>
 
@@ -249,7 +257,7 @@
     <section class="offers section contrast-colors">
       <div class="container">
         <div class="row">
-          <div class="offers__col col-5 offset-1">
+          <div class="offers__col col-12 col-md-5 offset-md-1">
             <header class="section__header">
               <h1 class="section__title offers__h1">аренда авто под такси</h1>
             </header>
@@ -286,7 +294,7 @@
     <section class="testimonials section">
       <div class="container">
         <div class="row">
-          <div class="testimonials__col col-9 offset-2">
+          <div class="testimonials__col col-12 col-md-9 offset-md-2">
             <header class="section__header">
               <h1 class="section__title">Отзывы наших клиентов</h1>
               <div class="section__desc">Напишите свой отзыв на почту info@mail.ru</div>
@@ -351,16 +359,17 @@
         </div>
       </div>
     </section>
+
     <section class="banner section">
       <img src="./imgs/banner-bg.png" alt="" class="banner__bg-el">
       <div class="container">
         <div class="row">
-          <div class="banner__col col-10 offset-2">
+          <div class="banner__col col-12 col-md-10 offset-md-2">
             <header class="banner__header section__header">
               <h1 class="banner__h1 section__title">оклейка авто <span class="light">под такси</span></h1>
-              <div class="section__subtitle">Адрес: Химки, Ленинский проспект 23 А</div>
+              <div class="banner__subtitle section__subtitle">Адрес: Химки, Ленинский проспект 23 А</div>
             </header>
-            <a href="tel:+79099817171" class="banner__tel tel tel_black sprite bold link">+7 (909) 981-71-71</a>
+            <a href="tel:+79099817171" class="banner__tel tel tel_black bold link">+7 (909) 981-71-71</a>
           </div>
         </div>
       </div>
@@ -369,7 +378,7 @@
     <section class="section-7">
       <div class="container">
         <div class="row">
-          <div class="col-10 offset-1">
+          <div class="col-12 col-md-10 offset-md-1">
             <header class="section__header">
               <h1 class="section-7__h1 section__title">Текст для продвижения</h1>
             </header>
@@ -399,18 +408,16 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-10 offset-1">
+        <div class="col-12 col-md-10 offset-md-1">
           <div class="footer__text">Сайт разработан студией IS ART</div>
         </div>
       </div>
     </div>
   </footer>
 
-
-
-  <!-- <script src="./js/jquery-v3.4.1.min.js"></script>
-  <script src="./js/slick.min.js"></script>
-  <script src="./js/main.js"></script> -->
+  <div class="light-box"></div>
+  
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

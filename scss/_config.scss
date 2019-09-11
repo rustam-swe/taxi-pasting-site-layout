@@ -68,19 +68,13 @@ $round: 50px;
 // Медиа запросы
 
 @mixin mediaXs {
-  @media screen and (max-width: 400px) {
-    @content;
-  }
-}
-
-@mixin mediaFablet {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 480px) {
     @content;
   }
 }
 
 @mixin mediaSm {
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 480px) {
     @content;
   }
 }

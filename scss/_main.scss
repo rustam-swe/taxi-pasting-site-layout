@@ -1,5 +1,4 @@
 // Остовные стили
-// Mobile first
 
 .header,
 .main,
@@ -9,40 +8,25 @@
   margin-right: auto;
 }
 
-.container {
-  max-width: 1200px;
-  padding-left: 0;
-  padding-right: 0;
-}
+// .container {
+//   max-width: 1200px;
+//   padding-left: 0;
+//   padding-right: 0;
+// }
 
 .flex {
   @extend %flexCenterXY;
   justify-content: space-between;
+
+  &_column {
+    flex-direction: column;
+  }
 }
 
-// Ссылки
 .link {
   text-decoration: none;
   cursor: pointer;
   color: #000;
-
-  &_primary {
-    font-size: $font-14;
-    color: $accent-orange;
-  }
-
-  &_secondary {
-    color: $secondary-color;
-  }
-
-  &_promo {
-    color: $promotion-label-color;
-    text-transform: uppercase;
-  }
-
-  &_underline {
-    text-decoration: underline;
-  }
 }
 
 input,
@@ -58,6 +42,7 @@ select {
   height: 50px;
   color: #000;
   font-family: $opensans-bold;
+  font-size: $font-14;
   text-transform: uppercase;
   border-radius: 5px;
   background-color: $accent-yellow;
@@ -86,24 +71,6 @@ select {
   text-transform: uppercase;
 }
 
-.underlined-heading {
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -0.6em;
-    left: 0;
-    width: 50%;
-    border-bottom: 0.125em solid $accent-orange;
-  }
-
-  &_short::after {
-    width: 30%;
-    max-width: 5em;
-    border-bottom-width: 0.1em;
-  }
-}
-
-// Списки (меню)
 .list {
   list-style: none;
   padding-left: 0;
@@ -124,13 +91,13 @@ select {
 }
 
 .section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   &__title {
     margin-top: 0;
     text-align: center;
-    font-size: $font-30;
+    font-size: $font-18;
     color: $accent-orange;
     text-transform: uppercase;
     font-family: $opensans-bold;
@@ -138,7 +105,7 @@ select {
 
   &__desc {
     text-align: center;
-    font-size: $font-16;
+    font-size: $font-14;
   }
 }
 
@@ -149,7 +116,7 @@ select {
 // Секция 1
 
 .sales {
-  height: 550px;
+  // height: 550px;
   background: url(../imgs/section-1-bg.jpg) no-repeat;
   position: relative;
 
@@ -158,39 +125,48 @@ select {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 83px;
+    width: 50%;
+    height: 38px;
     background: url(../imgs/clip-corner.png) no-repeat;
+    background-size: contain;
+    z-index: 1;
   }
 
   &__box {
+    position: relative;
     width: 780px;
     text-align: justify;
+    z-index: 2
   }
 }
 
 .big-price {
-  font-size: 48px;
+  font-size: 38px;
   color: $accent-yellow;
   background: url(../imgs/price-yellow.png) no-repeat left center;
   padding-left: 65px;
 }
 
 .form {
-  width: 550px;
-  height: 180px;
+  width: 100%;
+  // height: 180px;
   margin-top: 10px;
   padding: 10px 20px;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   align-content: space-around;
   border-radius: 3px;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
+
+  &>*:not(:last-child) {
+    margin-bottom: 15px
+  }
 
   &__element {
-    width: 240px;
-    height: 50px;
+    width: 100%;
+    height: 30px;
     color: #858585;
     border-radius: 5px;
 
@@ -215,7 +191,7 @@ select {
 
   &__label {
     display: block;
-    margin-bottom: 10px
+    // margin-bottom: 10px
   }
 }
 
@@ -239,20 +215,25 @@ select {
 }
 
 .category {
-  width: 860px;
+  width: 100%;
   margin-top: 50px;
 
   &__list {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    flex-direction: column
   }
 
   &__item {
-    width: 270px;
+    // width: 270px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px
+    }
   }
 
   &__container {
-    width: 270px;
+    width: 100%;
     height: 250px;
     padding: 10px;
     border: 1px solid #acacac;
@@ -294,39 +275,44 @@ select {
 }
 
 .cta {
-  width: 860px;
-  height: 145px;
+  // width: 860px;
+  // height: 145px;
   margin-top: 35px;
   padding: 20px 25px;
   color: #fff;
+  border-radius: 8px;
   background: url(../imgs/cta-bg.jpg);
+  background-size: cover;
 
   &__text {
-    font-size: $font-18;
-  }
-
-  &__btn {
-    height: 40px;
-    font-size: $font-14;
-    padding-right: 25px;
-    padding-left: 25px;
+    font-size: $font-16;
   }
 
   &__footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding-top: 5px
   }
 
+  &__btn {
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px 25px;
+    font-size: $font-14;
+  }
+
   &__tel {
     color: #fff;
-    margin-left: 25px;
+    // margin-left: 25px;
     padding-left: 25px;
     background: url(../imgs/tel-white.png) no-repeat left center;
   }
 }
 
 .licence {
+  position: relative;
   height: 240px;
   margin-top: 65px;
   display: flex;
@@ -334,6 +320,12 @@ select {
   align-items: space-between;
   background: #eed710 url(../imgs/licence-bg.jpg) no-repeat; //$accent-yellow;
   mask: url(../imgs/clip-bg.png) no-repeat;
+  z-index: 1;
+
+  &__container {
+    position: relative;
+    z-index: 2
+  }
 
   &__h1 {
     margin-top: 50px;
@@ -365,7 +357,8 @@ select {
   }
 
   &__list {
-    justify-content: space-between
+    justify-content: space-between;
+    flex-direction: column;
   }
 
   &__item {
@@ -377,6 +370,10 @@ select {
     font-family: $opensans-bold;
     background: $accent-yellow;
     border-radius: 4px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
 
 }
@@ -392,13 +389,13 @@ select {
     margin-right: auto;
     margin-left: auto;
     display: grid;
-    grid-gap: 50px 40px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr;
   }
 
   &__item {
-    width: 225px;
-    height: 235px;
+    width: 100%;
+    height: 270px;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -408,7 +405,7 @@ select {
 
   &__img {
     width: 100%;
-    height: 141px;
+    height: auto;
 
   }
 
@@ -439,15 +436,10 @@ select {
   @extend %flexCenterXY;
 
   justify-content: flex-start;
-  height: 600px;
   background: url(../imgs/section-4-bg.jpg);
 
-  &__col {
-    padding: 0
-  }
-
   &__h1 {
-    text-align: left;
+    text-align: center;
     margin-bottom: 40px;
   }
 
@@ -484,22 +476,18 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
 
     &-title {
-      font-size: $font-25;
+      font-size: $font-20;
       font-weight: bold
-    }
-
-    &-subtitle {
-      font-size: $font-18
     }
 
     &-btn {
       width: initial;
       max-width: 320px;
-      height: 40px;
-      padding-right: 25px;
-      padding-left: 25px;
+      padding-right: 40px;
+      padding-left: 40px;
       color: #000;
       font-size: $font-14
     }
@@ -514,33 +502,34 @@ select {
 
   &__content {
     position: relative;
-    padding: 30px 55px;
+    padding: 60px 15px 10px;
     border-radius: 10px;
     border: 1px solid #a5a5a5;
   }
 
   &__list {
-    margin-top: 40px;
+    margin-top: 70px;
   }
 
-  &__item:not(:last-child) {
-    margin-bottom: 25px
+  &__item {
+    margin-top: 70px
   }
 
   &__thumb {
-    width: 125px;
-    height: 125px;
+    width: 100px;
+    height: 100px;
     border-radius: 4px;
-
     position: absolute;
-    top: 20px;
-    left: -100px
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &__name {
     margin-bottom: 20px;
     font-style: italic;
-    font-size: $font-18
+    font-size: $font-18;
+    text-align: center;
   }
 
   &__text {
@@ -559,15 +548,14 @@ select {
   background: $accent-yellow;
 
   &__bg-el {
-    position: absolute;
-    bottom: 0;
-    left: 0
+    display: none;
   }
 
   &__col {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column
   }
 
   &__h1 {
@@ -575,10 +563,16 @@ select {
     margin: 0
   }
 
+  &__subtitle {
+    text-align: center
+  }
+
   &__tel {
+    margin: 0 auto;
+    padding-left: 35px;
+    font-size: $font-20;
     align-self: flex-start;
     background: url(../imgs/tel-black.png) no-repeat left center;
-    padding-left: 35px;
   }
 }
 
@@ -591,7 +585,7 @@ select {
   &__h1 {
     font-size: $font-25;
     color: #000;
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -605,24 +599,4 @@ select {
     font-size: $font-14;
     border-top: 1px solid #7a7a7a;
   }
-}
-
-
-
-.sprite.price-yellow {
-  background-position: 0px 0px;
-  width: 46px;
-  height: 28px;
-}
-
-.sprite.price-gray {
-  background-position: -46px 0px;
-  width: 22px;
-  height: 14px;
-}
-
-.sprite.user {
-  background-position: -139px 0px;
-  width: 18px;
-  height: 18px;
 }
