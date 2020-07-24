@@ -1,65 +1,128 @@
 // Мобильные телефоны
 
-// min-width: 320px
-@include mediaXs {
+// max-width: 480px
+// @include mediaXs {
+//   .form {
+//     max-width: 290px;
+//     margin-right: auto;
+//     margin-left: auto
+//   }
+// }
 
-  .header-top {
-    height: 70px;
-    justify-content: center;
-  }
-
-  // .logo,
-  // .tel {
-  //   font-size: $font-16;
-  // }
-
-  .sales__box {
-    width: 100%
+@include mediaXsAdditional {
+  .gallery__list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-// min-width: 576px
+// max-width: 767px
 @include mediaSm {
   .header-top {
-    height: 70px;
+    height: 90px;
     justify-content: center;
   }
 
-  // .logo,
-  // .tel {
-  //   font-size: $font-16;
-  // }
-
-  .sales__box {
-    width: 100%
+  .nav__container {
+    max-width: 100%;
   }
 }
 
 // Планшеты
 // min-width: 768px
-@include mediaMd {}
+@include mediaMd {
 
-// Настольные
-// min-width: 992px
-@include mediaLg {
+  // Шапка
 
-  .logo,
-  .tel {
-    font-size: $font-30;
+  .menu-btn {
+    display: none
   }
 
   .nav {
+    &__container {
+      // max-width: 720px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    &__menu {
+      position: initial;
+      display: flex;
+      flex-direction: row;
+      justify-content: initial;
+      background: transparent;
+    }
+
     &__item {
-      &:not(:first-child):not(:last-child) {
+      &:first-child {
+        margin-top: 0
+      }
+
+      &:last-child {
+        margin-bottom: 0
+      }
+
+      // &:not(:first-child):not(:last-child) {
+      &:not(:last-child) {
         margin-right: 35px;
       }
     }
   }
 
-  .container {
-    max-width: 1200px;
-    padding-left: 0;
-    padding-right: 0;
+  // Секция 1
+  .form {
+    width: 550px;
+    height: 180px;
+    margin: 10px 0 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &__element {
+      width: 240px;
+      height: 50px;
+    }
+
+    &__label {
+      display: block;
+      margin-bottom: 10px
+    }
+  }
+
+  // Секция 2
+  .category__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .licence {
+    mask: url(../imgs/clip-bg.png) no-repeat;
+  }
+
+  // Секция 3
+
+  .features {
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    &__item {
+      margin-bottom: 15px !important;
+    }
+  }
+}
+
+// Настольные
+// min-width: 992px
+@include mediaLg {
+  .header__container {
+    flex-direction: row
+  }
+
+  .logo,
+  .tel {
+    font-size: $font-30;
   }
 
   .section {
@@ -79,6 +142,7 @@
     font-size: $font-16;
   }
 
+  // Секция 1
   .sales {
     height: 550px;
 
@@ -97,85 +161,49 @@
     font-size: 48px;
   }
 
-  .form {
-    width: 550px;
-    height: 180px;
-    margin-top: 10px;
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    border-radius: 3px;
-    background: rgba(0, 0, 0, .4);
 
-    &__element {
-      width: 240px;
-      height: 50px;
-    }
-
-    &__label {
-      display: block;
-      margin-bottom: 10px
-    }
-  }
 
   // Секция 2
+  .price {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
 
   .category {
     width: 860px;
-    margin-top: 50px;
 
     &__list {
-      display: flex;
-      justify-content: space-between;
-
+      flex-direction: row
     }
 
     &__item {
       width: 270px;
-      margin-bottom: 0;
+      margin-bottom: 0 !important;
     }
 
     &__container {
       width: 270px;
       height: 250px;
-      padding: 10px;
-      border: 1px solid #acacac;
-      border-radius: 10px
+    }
+  }
+
+  .cta {
+    height: 145px;
+
+    &__footer {
+      flex-direction: row;
     }
 
-    &__info {
-      display: grid;
-      grid-gap: 0 1em;
-      grid-template-areas:
-        "thumb name"
-        "thumb price";
-    }
-
-    &__thumb {
-      grid-area: thumb
-    }
-
-    &__name {
-      grid-area: name;
-      font-size: $font-14
-    }
-
-    &__price {
-      grid-area: price;
-      color: $accent-red;
-      font-size: $font-18
-    }
-
-    &__sample {
-      display: block;
-      margin: 10px auto 0
+    &__text {
+      font-size: $font-18;
     }
 
     &__btn {
-      margin: 10px auto 0;
+      margin: 0;
+    }
 
+    &__tel {
+      margin-left: 25px;
     }
   }
 
@@ -184,7 +212,7 @@
   .gallery {
     &__list {
       grid-gap: 50px 40px;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     &__item {
@@ -211,6 +239,8 @@
     }
 
     &__cta {
+      text-align: left;
+
       &-title {
         font-size: $font-25;
       }
@@ -221,8 +251,10 @@
 
       &-btn {
         height: 40px;
+        margin-left: 0;
         padding-right: 25px;
         padding-left: 25px;
+        font-size: $font-14;
       }
     }
   }
@@ -244,27 +276,20 @@
       margin-top: 40px;
     }
 
-    &__item:not(:last-child) {
-      margin-bottom: 25px
+    &__item {
+      margin-top: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 25px
+      }
     }
 
     &__thumb {
       width: 125px;
       height: 125px;
       top: 20px;
-      left: -100px
-    }
-
-    &__name {
-      margin-bottom: 20px;
-      font-style: italic;
-      font-size: $font-18;
-      text-align: left;
-    }
-
-    &__text {
-      color: #7e7e7e;
-      font-size: $font-14;
+      left: -100px;
+      transform: translateX(0);
     }
   }
 
@@ -282,13 +307,13 @@
       flex-direction: row
     }
 
-    &__subtitile {
+    &__subtitle {
       text-align: left
     }
 
     &__tel {
       margin: initial;
-      font-size: initial;
+      font-size: $font-30;
     }
   }
 
@@ -298,13 +323,45 @@
 
     &__h1 {
       font-size: $font-25;
+      text-align: left;
     }
   }
 }
 
 // Большие
 // min-width: 1200px
-@include mediaXl {}
+@include mediaXl {
+  .container {
+    max-width: 1200px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Секция 2
+  .price {
+    &__col {
+      align-items: flex-start;
+    }
+  }
+
+  // Секция 3
+
+  .features {
+    &__list {
+      flex-direction: row;
+    }
+
+    &__item {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .gallery {
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
 
 // Вспомогательные медиа запросы max-width: 991px
-@include auxiliary {}
+// @include auxiliary {}

@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="./css/bootstrap-grid.css">
   <link rel="stylesheet" href="./css/normalize.css">
 
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
 <body>
   <header class="header">
     <section class="header-top flex">
-      <div class="container header__container flex flex_column">
+      <div class="container header__container flex">
         <div class="logo">
           <span class="bold">Оклейка авто</span> под такси
         </div>
@@ -32,17 +32,17 @@
       </div>
       <div class="nav__container container">
         <ul class="nav__menu list">
-          <li class="nav__item"><a href="#" class="link bold">Оклейка авто</a></li>
-          <li class="nav__item"><a href="#" class="link bold">Цены</a></li>
-          <li class="nav__item"><a href="#" class="link bold">Сроки</a></li>
-          <li class="nav__item"><a href="#" class="link bold">Примеры</a></li>
-          <li class="nav__item"><a href="#" class="link bold">Отзывы</a></li>
+          <li class="nav__item"><a href="#sales" class="link bold">Оклейка авто</a></li>
+          <li class="nav__item"><a href="#price" class="link bold">Цены</a></li>
+          <li class="nav__item"><a href="#offers" class="link bold">Сроки</a></li>
+          <li class="nav__item"><a href="#features" class="link bold">Примеры</a></li>
+          <li class="nav__item"><a href="#testimonials" class="link bold">Отзывы</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <main class="main">
-    <section class="sales section contrast-colors">
+    <section id="sales" class="sales section contrast-colors">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -81,10 +81,10 @@
       </div>
     </section>
 
-    <section class="price section">
+    <section id="price" class="price section">
       <div class="container">
         <div class="row justify-content-end">
-          <div class="col-12 col-md-9">
+          <div class="price__col col-12 col-xl-9">
             <header class="section__header">
               <h1 class="section__title text-left">стоимость оклейки авто под такси</h1>
               <div class="section__desc text-left">Выберите подходящий для себя вариант оклейки автомобиля и закажите
@@ -153,7 +153,7 @@
 
     </section>
 
-    <section class="features section">
+    <section id="features" class="features section">
       <div class="container">
         <div class="row">
           <div class="col-10 offset-1">
@@ -254,10 +254,10 @@
       </div>
     </section>
 
-    <section class="offers section contrast-colors">
+    <section id="offers" class="offers section contrast-colors">
       <div class="container">
         <div class="row">
-          <div class="offers__col col-12 col-md-5 offset-md-1">
+          <div class="offers__col col-12 col-lg-6 offset-lg-1">
             <header class="section__header">
               <h1 class="section__title offers__h1">аренда авто под такси</h1>
             </header>
@@ -291,10 +291,10 @@
       </div>
     </section>
 
-    <section class="testimonials section">
+    <section id="testimonials" class="testimonials section">
       <div class="container">
         <div class="row">
-          <div class="testimonials__col col-12 col-md-9 offset-md-2">
+          <div class="testimonials__col col-12 col-lg-9 offset-lg-2">
             <header class="section__header">
               <h1 class="section__title">Отзывы наших клиентов</h1>
               <div class="section__desc">Напишите свой отзыв на почту info@mail.ru</div>
@@ -360,11 +360,11 @@
       </div>
     </section>
 
-    <section class="banner section">
+    <section id="banner" class="banner section">
       <img src="./imgs/banner-bg.png" alt="" class="banner__bg-el">
       <div class="container">
         <div class="row">
-          <div class="banner__col col-12 col-md-10 offset-md-2">
+          <div class="banner__col col-12 col-lg-10 offset-lg-2">
             <header class="banner__header section__header">
               <h1 class="banner__h1 section__title">оклейка авто <span class="light">под такси</span></h1>
               <div class="banner__subtitle section__subtitle">Адрес: Химки, Ленинский проспект 23 А</div>
@@ -416,7 +416,7 @@
   </footer>
 
   <div class="light-box"></div>
-  
+
   <script src="./js/main.js"></script>
 </body>
 

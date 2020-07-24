@@ -1,5 +1,11 @@
-.header-top {
-  height: 90px;
+.header {
+  &-top {
+    height: 70px;
+  }
+
+  &__container {
+    flex-direction: column
+  }
 }
 
 .logo,
@@ -24,6 +30,7 @@
 
   &__container {
     padding: 0;
+    // max-width: 100%;
   }
 
   &__menu {
@@ -41,10 +48,16 @@
   }
 
   &__item {
+    &:first-child {
+      margin-top: 15px
+    }
+
+    &:last-child {
+      margin-bottom: 15px
+    }
 
     a {
-      height: initial;
-      padding: 10px 0;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -114,17 +127,17 @@
 }
 
 
-// .light-box {
-//   display: none;
-//   width: 100%;
-//   background-color: rgba(0, 0, 0, .5);
-//   height: 100%;
-//   position: fixed; // absolute;
-//   top: 60px;
-//   bottom: 0;
-//   z-index: 3;
+.light-box {
+  display: none;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  height: 100%;
+  position: fixed; // absolute;
+  top: 90px;
+  bottom: 0;
+  z-index: 2;
 
-//   &.show {
-//     display: initial;
-//   }
-// }
+  &.show {
+    display: initial;
+  }
+}

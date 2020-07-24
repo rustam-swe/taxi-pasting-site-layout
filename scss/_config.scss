@@ -55,29 +55,42 @@ $round: 50px;
 
 
 // Эффект появление с затуханием
-@keyframes fadeEffect {
-  from {
-    opacity: 0;
-  }
+// @keyframes fadeEffect {
+//   from {
+//     opacity: 0;
+//   }
 
-  to {
-    opacity: 1;
-  }
-}
+//   to {
+//     opacity: 1;
+//   }
+// }
 
 // Медиа запросы
 
 @mixin mediaXs {
-  @media screen and (max-width: 480px) {
-    @content;
-  }
-}
-
-@mixin mediaSm {
   @media screen and (min-width: 480px) {
     @content;
   }
 }
+
+@mixin mediaXsAdditional {
+  @media screen and (min-width: 550px) {
+    @content;
+  }
+}
+
+// @mixin mediaSmAdditional {
+//   @media screen and (max-width: 767px) {
+//     @content;
+//   }
+// }
+
+@mixin mediaSm {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 
 @mixin mediaMd {
   @media screen and (min-width: 768px) {
@@ -98,8 +111,8 @@ $round: 50px;
 }
 
 // Вспомогательные медиа запросы
-@mixin auxiliary {
-  @media screen and (max-width: 991px) {
-    @content;
-  }
-}
+// @mixin auxiliary {
+//   @media screen and (max-width: 991px) {
+//     @content;
+//   }
+// }
